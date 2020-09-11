@@ -1,0 +1,11 @@
+{% extends 'reuse.html' %}
+{% block head %}
+<title>Gallery</title>
+{% endblock %}
+{% block body %}
+    <h1>Your Images Here</h1>
+    
+    {% for pic in pickture: %}
+        <h2>{{ pic.img_title}}</h2>
+    {% endfor %}
+{% endblock %}

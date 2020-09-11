@@ -1,0 +1,22 @@
+{% extends 'reuse.html' %}
+{% block head %}
+<title>Posts</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+{% endblock %}
+{% block body %}
+    <div class='posts-body'>
+   <div>    <h1  style="display :inline">Your Posts Here!</h1>
+    <a  style="display:inline" class = 'btn btn-success float-right' href="create"> + Create Post </a>
+    </div>
+    <hr>
+    {% for post in posts: %}
+        <h2>{{ post.title }}</h2>
+        <h4>{{ post.content }}</h4>
+        <h4>{{ post.date }}</h4>
+        <h5>{{ post.author }}</h5>
+        <a class = 'btn btn-danger' href="/posts/delete/{{post.id}}"> Delete </a>
+        <a class="btn btn-info" href="/posts/edit/{{post.id}}"> Edit </a>
+        <br>
+        {% endfor %}
+    </div>
+{% endblock %}

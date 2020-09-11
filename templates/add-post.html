@@ -1,0 +1,21 @@
+{% extends 'reuse.html' %}
+{% block head %}
+<title>Posts</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+{% endblock %}
+{% block body %}
+    <div class='posts-body'>
+    <h1>Your Posts Here!</h1> <br>
+    <h3>Add a new post</h3>
+    <form action="/posts" method="POST" >
+    Title: <input class="form-control title-input" type="text" name='title' id='title' placeholder="Title" >
+
+    Post: 
+        <div class="form-group">
+        <textarea class="form-control content-input" id='content' name='content' rows="3" placeholder="Type smthng Beautiful!"></textarea>
+        </div>
+    <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+    
+    </div>
+{% endblock %}
